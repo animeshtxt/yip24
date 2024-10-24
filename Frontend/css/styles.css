@@ -984,11 +984,11 @@ nav {
 .container {
   width: 100vw;
   height: auto; 
-  background-color: #80CBC4;
+  background-color: #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 0 2rem 2rem;
   border-radius: 20px;
 }
 
@@ -1116,6 +1116,7 @@ nav {
   width: 3rem;
   height: 3rem;
   background-color: #fff;
+  color: #000;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -1136,16 +1137,15 @@ nav {
 .dots span {
   width: 0.7rem;
   height: 0.7rem;
-  background-color: #728f9e;
+  background-color: var(--secondary-color-light);
   border-radius: 50%;
   margin: 0 0.5rem;
   cursor: pointer;
 }
 
 .dots span.active {
-  width: 0.9rem;
-  height: 0.9rem;
-  background-color: #fff;
+  transform: scale(1.5);
+  background-color: var(--primary-color);
 }
 
 @media (max-width: 1024px) {
