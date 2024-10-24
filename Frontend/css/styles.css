@@ -1019,23 +1019,22 @@ nav {
 .testimonials-header h1 {
   position: relative;
   isolation: isolate;
-  margin-bottom: 1rem;
+  margin: 2.5rem 0 1rem 0 ;
   padding-left: 20px;
-  font-size: 1.2rem;
+  font-size: 29px;
   font-weight: 500;
   color: #263339;
 }
 
 .testimonials-header h1::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 45px;
-  aspect-ratio: 1;
-  background-color: var(--primary-color);
-  z-index: -1;
+  content: " ";
+	position: absolute;
+	width: 51.65px;
+	height: 3px;
+	left: 50%;
+	bottom: -5px;
+	transform: translateX(-50%);
+	background-image: linear-gradient(to right, rgba(14, 196, 216, 0.767), rgba(12, 238, 140, 0.747));
 }
 
 .testimonials {
@@ -1155,7 +1154,7 @@ nav {
   }
 
   .testimonials-header h1 {
-    font-size: 1.5rem;
+    font-size: 29px;
   }
 
   .slide-text h3 {
@@ -1213,7 +1212,7 @@ nav {
 
 @media (max-width: 480px) {
   .testimonials-header h1 {
-    font-size: 1.3rem;
+    font-size: 29px;
     padding: 10px;
   }
 
