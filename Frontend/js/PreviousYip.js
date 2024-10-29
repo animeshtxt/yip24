@@ -27,7 +27,7 @@ const PreYipData = [
         year:2019,
         img1:"./images/PYimg/2019.png",
         img2:"./images/PYimg/2.png",
-        mainh1:"Yip 2019",
+        mainh1:"YIP 2019",
         link:"https://drive.google.com/file/d/1ngkV84270SEWgtxeOM3KEZnOOPEEPCpL/view?usp=sharing",
         text:'The third edition of YIP was a huge success, reaching out to 1200+ schools. The event saw the participation of 800+ teams and more than 2400 students with great enthusiasm and zeal. Teams from Singapore, UAE, Indonesia, Malaysia, and Saudi Arabia participated in the event in 2019, and some of them successfully made it to the semi-finals too and visited IIT Kharagpur.'
     },
@@ -43,7 +43,7 @@ const PreYipData = [
         year:2017,
         img1:"./images/PYimg/2021_2.png",
         img2:"./images/PYimg/4.png",
-        mainh1:"Yip 2017",
+        mainh1:"YIP 2017",
         link:"https://drive.google.com/file/d/1GQ55dSsNqpLYCrfwAqjrJJdXkURSNDPn/view?usp=sharing",
         text:`The Young Innovators' Program of 2017 IIT KGP boasted a nationwide reach, drawing the participation of schools from various corners of the country. As a pivotal component of the program's third round, a select group of 24 schools were given the unique opportunity to showcase their projects at the revered institution. This interaction extended beyond mere presentations, allowing the students to engage directly with distinguished professors from IIT KGP. Furthermore, the attendees were enriched by a comprehensive robotics workshop and an extensive campus tour, affording them firsthand exposure to the expansive academic expanse and state-of-the-art laboratories that distinguish IIT KGP as a leading educational institution in India.`
     },
