@@ -139,7 +139,8 @@ header {
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.8)
     ),
-    url("../assets/header.jpg");
+    /* url("../assets/header.jpg"); */
+    url("../images/GalleryImg/gallery_1.JPG");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -431,7 +432,7 @@ nav {
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.6)
     ),
-    url("../assets/subscribe.jpg");
+    url("../assets/sbrc-2024-team.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
