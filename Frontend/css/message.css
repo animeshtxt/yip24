@@ -19,6 +19,15 @@ html {
     z-index: 10;
 }
 
+.nav-heading{
+	font-size: 15px;
+	color: black;
+  }
+  
+  .nav-heading h1{
+	font-family:serif ;
+  }
+
 .container2 {
     width: 100%;
     max-width: 1400px;
@@ -31,14 +40,19 @@ html {
 }
 
 .logo {
-    width: 8%;
-    height: auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: center;
+	width: 20%;
+	height: auto;
 }
+
 .menu{
 	transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
 }
 .logo img {
-    width: 35%;
+    width: 30px;
 }
 
 .menu ul {
@@ -67,7 +81,7 @@ html {
 /* Mobile styles */
 @media (max-width: 768px) {
 	.logo {
-		width: 20%;
+		width: 40%;
 		height: auto;
 	}
     .menu {
@@ -127,7 +141,7 @@ html {
 	align-items: center;
 	justify-content: center;
 	padding: 30px;
-	background-image: url(/images/MessageImages//pattern-curve.svg);
+	background-image: url("../images/MessageImages/pattern-curve.svg");
 	background-position: center bottom;
 	background-size: contain;
 	background-repeat: no-repeat;
@@ -209,10 +223,13 @@ html {
 .slide-img img {
 	height: 100%;
 	width: 300px;
+	border-radius: 50%;
 }
 .prev,
 .next {
-	display: inline-block;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 50%;
 	height: 100%;
 	position: absolute;
