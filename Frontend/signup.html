@@ -7,9 +7,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
      
      <link rel="icon" href="images/yip-logo.png">
+     <style>
+      .bg-img-login{
+       background-image: url(https://yip.iitkgp.ac.in/images/GalleryImg/gallery_1.JPG);
+       background-size: cover;
+       opacity: 0.8;
+       
+     
+     }
+     .main-page{
+       background-color: rgba(0, 0, 0, 0.674);
+       
+     }
+
+
+      
+   </style>
 </head>
 <body>
-    <div class="relative">
+    <div class="relative main-page">
+      <div class="absolute w-full h-full  z-[-1] bg-img-login"></div>
         <div class="absolute z-[1000] top-10 left-1/2 -translate-x-1/2 bg-green-500 text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-500" id="toast">
             Success! Your action was completed.
           </div>
