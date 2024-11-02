@@ -197,7 +197,7 @@ nav {
   font-weight: 500;
   color: var(--secondary-color);
   transition: 0.3s;
-  background-color: red;
+  background-color:var(--primary-color);
   border-radius: 7%;
   border-color: #000000;
 }

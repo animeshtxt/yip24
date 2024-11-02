@@ -84,7 +84,8 @@
 }
 .timelineList li .timelineDate {
 	position: absolute;
-	width: 150px;
+	padding: 0 15px;
+	width: auto;
 	height: 30px;
 	background-image: linear-gradient(to right, rgba(14, 196, 216, 0.767), rgba(12, 238, 140, 0.747));
 	border-radius: 15px;
