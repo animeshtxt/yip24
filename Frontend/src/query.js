@@ -5,12 +5,14 @@ document.getElementById("queryForm").addEventListener("submit", function (e) {
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const query = document.getElementById("query").value;
+    const phoneNo = document.getElementById("phoneNo").value;
   
     // Create the request payload
     const data = {
         senderName: name,
         senderEmail: email,
-        query: query
+        query: query,
+        phoneNo: phoneNo
     };
   
     const spinner = document.getElementById("spinner");
@@ -45,5 +47,6 @@ document.getElementById("queryForm").addEventListener("submit", function (e) {
         document.getElementById('name').value = "";
         document.getElementById('email').value = "";
         document.getElementById('query').value = "";
+        document.getElementById("phoneNo").value = "";
     });
 });
