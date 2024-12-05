@@ -30,13 +30,16 @@ document.getElementById('signup-btn').addEventListener('click', async (event) =>
 
   // Get values from the input fields
   const teamName = document.getElementById('team-name').value;
+  const mentorName = document.getElementById('mentor-name').value;
+  const mentorEmail = document.getElementById('mentor-email').value;
+  const mentorPhoneNo = document.getElementById('mentor-phone').value;
   const password = document.getElementById('password').value;
   const confirmPassword = document.getElementById('confirmPassword').value;
   const loadingSpinner = document.getElementById('signup-btn'); // Spinner element
   const errorDisplay = document.getElementById('error-shower');
   errorDisplay.innerHTML="";
   // Validate the form (simple example)
-  if (!teamName || !password || !confirmPassword) {
+  if (!teamName || !password || !confirmPassword || !mentorName || !mentorEmail || !mentorPhoneNo) {
       errorDisplay.innerHTML="All fields are required";
       return;
   }
@@ -48,7 +51,10 @@ document.getElementById('signup-btn').addEventListener('click', async (event) =>
 
   const signupData = {
       team_name: teamName,
-      password: password
+      password: password,
+      mentorName: mentorName,
+      mentorEmail: mentorEmail,
+      mentorPhoneNo: mentorPhoneNo
   };
   console.log(signupData);
 
@@ -100,6 +106,9 @@ document.getElementById('signup-btn').addEventListener('click', async (event) =>
     document.getElementById('team-name').value="";
     document.getElementById('password').value="";
     document.getElementById('confirmPassword').value="";
+    document.getElementById('mentor-name').value="";
+    document.getElementById('mentor-email').value="";
+    document.getElementById('mentor-phone').value="";
   }
    
 });
