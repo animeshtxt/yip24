@@ -6,46 +6,56 @@
     transform: translateX(-100%);
   }
 }
-
-.logos {
+.mainWrapper {
+  padding: 20px 0 !important;
+}
+.spons-header{
+  margin: 0 0 40px 0!important;
+}
+.logos-slide-container {
   overflow: hidden;
-  padding: 40px 0;
+  padding: 0 0 40px 0;
   background: white;
   white-space: nowrap;
   position: relative;
 }
 
-.logos:before,
-.logos:after {
+.logos-slide-container:before,
+.logos-slide-container:after {
   position: absolute;
   top: 0;
   width: 150px; /* Reduce the gradient width on smaller screens */
   height: 100%;
   content: "";
-  z-index: 2;
+  z-index: 10;
 }
 
-.logos:before {
+.logos-slide-container:before {
   left: 0;
   background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
 }
 
-.logos:after {
+.logos-slide-container:after {
   right: 0;
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
 }
 
-.logos:hover .logos-slide {
+.logos-slide-container:hover .logos-slide {
   animation-play-state: paused;
 }
-
+.logos-slide-container{
+  display: flex;
+  overflow: hidden;
+}
 .logos-slide {
-  display: inline-block;
+  display: flex;
+  flex-shrink: 0;
   animation: slide 35s linear infinite;
 }
 
 .logos-slide img {
   height: 100px;
+  width: auto;
   margin: 0 20px; /* Adjust default spacing for medium screens */
   transition: all 0.3s ease-in-out;
 }
@@ -57,8 +67,8 @@
     margin: 0 15px;
   }
 
-  .logos:before,
-  .logos:after {
+  .logos-slide-container:before,
+  .logos-.logos-slide-container {
     width: 100px; /* Narrow gradient edges */
   }
 
@@ -77,8 +87,8 @@
     margin: 0 10px;
   }
 
-  .logos:before,
-  .logos:after {
+  .logos-slide-container:before,
+  .logos-slide-container:after {
     width: 75px; /* Narrow gradient edges further */
   }
 
@@ -93,12 +103,12 @@
     margin: 0 5px;
   }
 
-  .logos:before,
-  .logos:after {
+  .logos-slide-container:before,
+  .logos-slide-container:after {
     width: 50px; /* Minimal gradient for very small screens */
   }
 
   .logos-slide {
-    animation: slide 20s linear infinite; /* Fastest animation for very small screens */
+    animation: slide 30s linear infinite; /* Fastest animation for very small screens */
   }
 }
