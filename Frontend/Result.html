@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="icon" href="images/yip-logo.png">
-    <title>Round-1  </title>
+    <title>Results</title>
     <style>
         body {
             font-family: 'DM Sans', sans-serif;
@@ -31,6 +31,16 @@
             pointer-events: none;
             z-index: 9999;
         }
+        .fade-in {
+          opacity: 0;
+          transition: opacity 0.5s ease-in-out;
+        }
+
+        .visible {
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
     </style>
 </head>
 <body class="overflow-x-hidden bg-[#e0eeedf8]">
@@ -41,35 +51,45 @@
         <ul class="flex gap-8 *:font-medium *:text-[1.2rem] items-center  mx-auto">
             <li><a class="hover:text-[#26A69A] transition" href="index.html">Home</a></li>
             <li><a class="hover:text-[#26A69A] transition" href="message.html">Message</a></li>
-            <li><a  class="hover:text-[#26A69A] transition" style="text-wrap: nowrap;" href="PreviousYIP.html" >Previous Edition</a></li>
+            <li><a  class="hover:text-[#26A69A] transition" style="text-wrap: nowrap;" href="PreviousYIP.html" >Previous Editions</a></li>
           </ul>
      </div>
-     <ul class="link1 p-2 rounded-md text-[1.2rem]" style="margin-right: 10px;background-color:#26A69A;"><a href="login.html"  style="color: rgb(255, 255, 255); ">Login</a></ul>
+     <div class="flex flex-row flex-nowrap items-center">
+      <ul ><li class="hover:text-[#26A69A] transition md:hidden mx-8 text-[1.2rem]"><a href="index.html">Home</a></li></ul>
+      <ul class="link1 p-2 rounded-md text-[1.2rem]" style="margin-right: 10px;background-color:#26A69A;"><a href="login.html"  style="color: rgb(255, 255, 255); ">Login</a></ul>
+     </div>
+     
    </nav>
-   <h1 class="text-center text-[2rem] pt-3 font-semibold">Young Innovators' Program 2024</h1>
-   <p class="text-center pt-2 text-[1.3rem] text-black  font-semibold">Round-1 Result</p>
+   <canvas id="fireworks-canvas"></canvas>
 
-    <div class="w-screen pt-[10%]  sm:pt-[5%] md-[10%] lg:pt-[4%] bg-[] min-h-[100vh]">
-        <h1 class="font-bold text-[2.4rem] border-b text-center">Qualified Teams-Junior Division </h1>
-         
-         <div class="cont1 flex flex-wrap justify-center mt-12 gap-10 w-[99%] mx-auto ">
-            
-         
-     </div>
+   <h1 class="text-center text-[2rem] pt-3 font-semibold">Young Innovators' Program 2024</h1>
+   <p class="text-center my-4 h-10 bg-amber-600 rounded-full px-4 w-2/5 text-2xl mx-auto text-white text-center">Results</p>
+   <div class="flex flex-row flex-wrap w-100 justify-center mt-4">
+    <button id="round1" class="round-swipe-btn pre-btn-ele py-3 mx-4 my-2 px-8 b-1 rounded-full bg-[#26A69A]  text-white ">Round-1</button>
+    <button id="round2" class="round-swipe-btn pre-btn-ele py-3 mx-4 px-8 my-2 b-1 rounded-full bg-[#bad3d2]  text-white ">Round-2</button>
+    <button id="round3" class="round-swipe-btn pre-btn-ele py-3 mx-4 px-8 my-2 b-1 rounded-full bg-[#bad3d2]  text-white ">Round-3</button>
    
-    </div>
-    <div class="w-screen pt-[20%]  sm:pt-[15%] md-[5%] lg:pt-[6%] bg-[] min-h-[100vh]">
-        <h1 class="font-bold text-[2.4rem] border-b text-center">Qualified Teams-Senior Division </h1>
-         
-         <div class="cont2 flex flex-wrap justify-center my-12 gap-10 w-[99%] mx-auto ">
-            
-            
-     </div>
+   </div>
+   
+   
+   <div class="outer-container visible">
+        <div class="w-screen pt-[10%]  sm:pt-[5%] md-[10%] lg:pt-[4%] bg-[] ">
+          <h1 id="junior-div-heading" class="font-bold text-[2.4rem] border-b text-center">Qualified Teams - Junior Division </h1>
+          
+          <div class="cont1 flex flex-wrap justify-center mt-12 gap-10 w-[99%] mx-auto "></div>
     
-    </div>
+        </div>
+        <div class="w-screen pt-[20%]  sm:pt-[15%] md-[5%] lg:pt-[6%] bg-[] ">
+          <h1 id="senior-div-heading" class="font-bold text-[2.4rem] border-b text-center">Qualified Teams - Senior Division </h1>
+          
+          <div class="cont2 flex flex-wrap justify-center my-12 gap-10 w-[99%] mx-auto "></div>
+      
+        </div>
+   </div>
+    
     <script>
 
-        const juniorDivisionTeams = [
+        const round1juniorDivision = [
   {
     email: "mothers.puri@mothers.edu.in",
     teamName: "Mother's Puri",
@@ -148,7 +168,11 @@
   
 ];
 
-const seniorDivisionTeams = [
+round1juniorDivision.sort((a, b) => {
+  return a.teamName.localeCompare(b.teamName);
+});
+
+const round1seniorDivision = [
   {
     email: "suchita.agarwalla@10xinternationalschool.com",
     teamName: "Project Breathe",
@@ -176,7 +200,7 @@ const seniorDivisionTeams = [
   },
   {
     email: "jenvyas08@gmail.com",
-    teamName: "philanthropy pioneers",
+    teamName: "Philanthropy Pioneers",
     schoolName: "Private International English School"
   },
   {
@@ -241,6 +265,118 @@ const seniorDivisionTeams = [
   }
 ];
 
+round1seniorDivision.sort((a, b) => {
+  return a.teamName.localeCompare(b.teamName);
+});
+
+const round2juniorDivision =[
+  {
+    email: "outreach.idealoom@keystoneeducation.in",
+    teamName: "Aegis",
+    schoolName: "Keystone International School"
+  },
+  {
+    email: "yogeshkumar@vishwajyot.com",
+    teamName: "Micro Racers",
+    schoolName: "Vishwajyot High School, Kharghar"
+  },
+  {
+    email: "mahasweta21k@gmail.com",
+    teamName: "Neuronex",
+    schoolName: "Gospel Home School, Rishra"
+  },
+  {
+    email: "dipankar64pal@gmail.com",
+    teamName: "RuralTech",
+    schoolName: "Lakshmipat Singhania Academy"
+  },
+  {
+    email: "rakhikrishna@ksms.ac.in",
+    teamName: "Techno Tillers",
+    schoolName: "Kerala Samajam Model School"
+  },
+  {
+    email: "arya12345qwerty@gmail.com",
+    teamName: "The Pikachu",
+    schoolName: "Kaanger Valley Academy"
+  },
+];
+round2juniorDivision.sort((a, b) => {
+  return a.teamName.localeCompare(b.teamName);
+});
+
+const round2seniorDivision = [
+  {
+    email: "mehrhora@vasantvalley.edu.in",
+    teamName: "AMPlify",
+    schoolName: "Vasant Valley School"
+  },
+  {
+    email: "principal@bvbraipur.org",
+    teamName: "Aortic Analysts",
+    schoolName: "Bhavans RK Sarda Vidhya Mandir, Raipur"
+  },
+  {
+    email: "utkarsh.deshpande@shishukunj.in",
+    teamName: "Blooming buds",
+    schoolName: "The Shishukunj International School (Jhalaria)"
+  },
+  {
+    email: "nirvang@vasantvalley.edu.in",
+    teamName: "Diagnostic Detectives",
+    schoolName: "Vasant Valley School"
+  },
+  {
+    email: "jenvyas08@gmail.com",
+    teamName: "Philanthropy Pioneers",
+    schoolName: "Private International English School"
+  },
+  {
+    email: "swagat.dev@gmail.com",
+    teamName: "Sunbeam 4",
+    schoolName: "Sunbeam English School, Bhagwanpur"
+  },
+];
+round2seniorDivision.sort((a, b) => {
+  return a.teamName.localeCompare(b.teamName);
+});
+
+const round3juniorDivision = [
+  {
+    email: "mahasweta21k@gmail.com",
+    teamName: "Neuronex",
+    schoolName: "Gospel Home School, Rishra"
+  },
+  {
+    email: "dipankar64pal@gmail.com",
+    teamName: "RuralTech",
+    schoolName: "Lakshmipat Singhania Academy"
+  },
+  {
+    email: "outreach.idealoom@keystoneeducation.in",
+    teamName: "Aegis",
+    schoolName: "Keystone International School"
+  },
+];
+
+const round3seniorDivision = [
+  {
+    email: "swagat.dev@gmail.com",
+    teamName: "Sunbeam 4",
+    schoolName: "Sunbeam English School, Bhagwanpur"
+  },
+  {
+    email: "jenvyas08@gmail.com",
+    teamName: "Philanthropy Pioneers",
+    schoolName: "Private International English School"
+  },
+  {
+    email: "mehrhora@vasantvalley.edu.in",
+    teamName: "AMPlify",
+    schoolName: "Vasant Valley School"
+  },
+];
+
 
 
 function createTeamCard(teamData) {
@@ -258,12 +394,60 @@ function createTeamCard(teamData) {
     schoolName.className = "text-[1rem] text-black font-bold mt-2 text-center";
     schoolName.textContent = teamData.schoolName;
     
+    // document.querySelector(".outer-container").classList.remove('fade-in');
+    // document.querySelector(".outer-container").classList.add('visible');
     // Append elements to card
     cardDiv.appendChild(teamName);
     cardDiv.appendChild(schoolName);
     
     return cardDiv;
 }
+
+const divisions = {
+  round1juniorDivision,
+  round1seniorDivision,
+  round2juniorDivision,
+  round2seniorDivision,
+  round3juniorDivision,
+  round3seniorDivision
+};
+
+function changeRound(roundName, e) {
+  // e.target.classList.toggle('bg-[#bad3d2]');
+  // e.target.classList.toggle('bg-[#26A69A]');
+ 
+  appendAllTeamCards(divisions[`${roundName}juniorDivision`], 'cont1');
+  appendAllTeamCards(divisions[`${roundName}seniorDivision`], 'cont2');
+  if(roundName != "round3"){
+    document.getElementById('junior-div-heading').innerText = "Qualified Teams - Junior Division";
+    document.getElementById('senior-div-heading').innerText = "Qualified Teams - Senior Division";
+  } else {
+
+    document.getElementById('junior-div-heading').innerText = "Winners - Junior Division";
+    document.getElementById('senior-div-heading').innerText = "Winners - Senior Division";
+  }
+  startFireworks();
+  // loop();
+}
+
+document.querySelectorAll(".round-swipe-btn").forEach((roundBtn) => {
+  roundBtn.addEventListener("click", (e) => {
+    // Reset the background color of all buttons
+    document.querySelectorAll(".round-swipe-btn").forEach((btn) => {
+      btn.classList.remove ("bg-[#26A69A]"); 
+      btn.classList.add ("bg-[#bad3d2]"); // Reset to default (or specify a color if needed)
+    });
+
+    // Change the background color of the clicked button
+     // Replace 'yourColorHere' with a color value like 'red', '#ff0000', or 'rgb(255, 0, 0)'
+    
+    // Call your changeRound function
+    changeRound(e.target.id);
+    e.target.classList.remove("bg-[#bad3d2]");
+    e.target.classList.add("bg-[#26A69A]");
+  });
+});
+
 
 // Usage example:
 // const card = createTeamCard({
@@ -275,19 +459,34 @@ function createTeamCard(teamData) {
 // To create multiple cards:
 function appendAllTeamCards(data, containerClass) {
     const container = document.querySelector(`.${containerClass}`);
-    if (container) {
+    const outerContainer = document.querySelector(".outer-container");
+    outerContainer.classList.remove('visible');
+    outerContainer.classList.add('fade-in');
+    setTimeout(() => {
+       if (container) {
+     
+      container.innerHTML='';
         data.forEach(team => {
             const card = createTeamCard(team);
             container.appendChild(card);
         });
+        outerContainer.classList.remove('fade-in');
+        outerContainer.classList.add('visible');
     } else {
         console.error(`Container with class '${containerClass}' not found`);
     }
+    }, 500);
+   
 }
 
 
-appendAllTeamCards(juniorDivisionTeams,'cont1');
-appendAllTeamCards(seniorDivisionTeams,'cont2');
+appendAllTeamCards(round1juniorDivision,'cont1');
+appendAllTeamCards(round1seniorDivision,'cont2');
+
+// document.getElementById('round-1').addEventListener('click',(e)=>{changeRound('round1', e);} );
+// document.getElementById('round-2').addEventListener('click', (e)=>{changeRound('round2', e);});
+// document.getElementById('round-3').addEventListener('click', (e)=>{changeRound('round3', e);});
+
         // Fireworks effect
         const canvas = document.getElementById('fireworks-canvas');
         const ctx = canvas.getContext('2d');
@@ -305,7 +504,7 @@ appendAllTeamCards(seniorDivisionTeams,'cont2');
                 color: colors[Math.floor(Math.random() * colors.length)],
                 speedX: Math.random() * 4 - 2,
                 speedY: Math.random() * 4 - 2,
-                lifetime: 50
+                lifetime: 100
             };
             particles.push(particle);
         }
